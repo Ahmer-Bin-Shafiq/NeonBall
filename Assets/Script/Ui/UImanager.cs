@@ -187,7 +187,7 @@ public class UImanager : MonoBehaviour {
            // Camerafolow.camfolowplayer.Intanceectff(); // tạo hiệu ứng
             StartCoroutine(playagain());
             showitembuyflylong();
-            emty.emtyplayer.ResutTranformemty();
+          //  emty.emtyplayer.ResutTranformemty();
             
         }
 
@@ -267,7 +267,7 @@ public class UImanager : MonoBehaviour {
     IEnumerator Playdelay()
     {
         mapitro.instance.Muvingship();
-        emty.emtyplayer.StartCoroutine(emty.emtyplayer.intheplay());
+        //emty.emtyplayer.StartCoroutine(emty.emtyplayer.intheplay());
         yield return new WaitForSeconds(0.3f);
        // Debug.Log("chơi lại");
         Perencamera.managerscen.GetComponent<Animator>().SetBool("play",true);
@@ -275,7 +275,7 @@ public class UImanager : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         Playermuving.isplay = true;
         Playermuving.speedmuving = 5;
-        GoogleMobileAdsScript.Instance.showbaner();
+       // GoogleMobileAdsScript.Instance.showbaner();
         if (PlayerPrefs.HasKey("hd") == false)
         {
             UIHowToPlay.SetActive(true);
@@ -287,9 +287,9 @@ public class UImanager : MonoBehaviour {
         amin.SetBool("play", true);
         amin.SetBool("again", false);
         btnplay.gameObject.SetActive(false);
-        emty.emtyplayer.actac();
-        emty.emtyplayer.animationrunplay();
-        emty.die = 1;
+       // emty.emtyplayer.actac();
+      //  emty.emtyplayer.animationrunplay();
+        //emty.die = 1;
         btnplay.gameObject.SetActive(false);
         if (managerdata.manager.GetFly() >= 1)
         {
@@ -578,7 +578,7 @@ public class UImanager : MonoBehaviour {
         PlayerPrefs.Save();
         managerdata.manager.savemuving(coinmuving);
         managerdata.manager.savecoin(coin);
-        showhighscoreinpanellost.text = managerdata.manager.getmuving().ToString();
+    //    showhighscoreinpanellost.text = managerdata.manager.getmuving().ToString();
         if (alowcall)
         {
             alowcall = false;
@@ -648,7 +648,7 @@ public class UImanager : MonoBehaviour {
                     Playermuving.player.backtodie(); 
                     yourkey.text = managerdata.manager.getkey().ToString();
                     managerdata.manager.savekey(-needkey);
-                    emty.emtyplayer.ResutTranformemty();
+                //    emty.emtyplayer.ResutTranformemty();
                     Perencamera.managerscen.height = 3;
                     break;
                 }
@@ -664,11 +664,11 @@ public class UImanager : MonoBehaviour {
                 goodCPU.intance.GetStartrotay(false);
                 Camerafolow.camfolowplayer.gameObject.GetComponent<Camera>().farClipPlane = 3;
                 Playermuving.player.OurtCut();
-                GoogleMobileAdsScript.Instance.hidebaner();
+              // GoogleMobileAdsScript.Instance.hidebaner();
                 inthepanelpause.playagain = true;
                 if (showbane >= 2)
                 {
-                    GoogleMobileAdsScript.Instance.showfullbaner();
+                 //   GoogleMobileAdsScript.Instance.showfullbaner();
                     showbane = 0;
                 }
                  if (selectkey == false)

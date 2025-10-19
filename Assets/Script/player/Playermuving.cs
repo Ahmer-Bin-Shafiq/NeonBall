@@ -327,7 +327,7 @@ public void Getscore(float value)
     public void runamin()
     {
         animationPlayer.SetBool("jump", false);
-        emty.emtyplayer.ExitJump();
+     //   emty.emtyplayer.ExitJump();
     }
     public void jupamin()
     {
@@ -409,9 +409,9 @@ public void Getscore(float value)
                         {
                             ExitAllItem();
                             Camerafolow.camfolowplayer.StartCoroutine(Camerafolow.camfolowplayer.Effect()); // hiệu ứng rung camera
-                            emty.emtyplayer.startatact();
-                            emty.emtyplayer.StartCoroutine(emty.emtyplayer.alowcalltheactact());
-                            emty.emtyplayer.StartCoroutine(emty.emtyplayer.animationrunplay());
+                           // emty.emtyplayer.startatact();
+                            //emty.emtyplayer.StartCoroutine(emty.emtyplayer.alowcalltheactact());
+                            //emty.emtyplayer.StartCoroutine(emty.emtyplayer.animationrunplay());
                             enterthedie();
                         }
                     }
@@ -469,16 +469,16 @@ public void Getscore(float value)
                 {
                     if (Manageritem.baylongcoin == false && Manageritem.baycoin == false)
                     {
-                        if (emty.emtyplayer != null && emty.alowcallhere)
-                        {
-                            Soundmanager.soundmanager.PlayPoliceSound();
-                            if (Manageritem.van == false)
-                            {
-                                emty.emtyplayer.startatact();
-                                emty.emtyplayer.StartCoroutine(emty.emtyplayer.alowcalltheactact());
-                                emty.emtyplayer.StartCoroutine(emty.emtyplayer.animationrunplay());
-                            }
-                        }
+                        // if (emty.emtyplayer != null && emty.alowcallhere)
+                        // {
+                        //     Soundmanager.soundmanager.PlayPoliceSound();
+                        //     if (Manageritem.van == false)
+                        //     {
+                        //         emty.emtyplayer.startatact();
+                        //         emty.emtyplayer.StartCoroutine(emty.emtyplayer.alowcalltheactact());
+                        //         emty.emtyplayer.StartCoroutine(emty.emtyplayer.animationrunplay());
+                        //     }
+                        // }
                     }
                 }
             }
@@ -565,7 +565,7 @@ public void Getscore(float value)
 
 
         //checccc 
-        emty.emtyplayer.OnanimationCash();
+       // emty.emtyplayer.OnanimationCash();
         gettranformofplayerforitemvantomuving = transform.position.z;
         Camerafolow.isdowham = false;
         UImanager.uimanager.Lost();
@@ -581,7 +581,7 @@ public void Getscore(float value)
         backnowmuvingship = true;
         isplay = false;
         transform.Translate(0, 0, 0);
-        emty.emtyplayer.OnanimationCash();
+       // emty.emtyplayer.OnanimationCash();
         gettranformofplayerforitemvantomuving = transform.position.z;
         Camerafolow.isdowham = false;
         animationPlayer.SetBool("die", true);
@@ -969,7 +969,7 @@ public void Getscore(float value)
         rb.useGravity = false;
         animationPlayer.SetBool("bay", true);
         animationPlayer.SetBool("down", false);
-        emty.emtyplayer.exittheactack();
+      //  emty.emtyplayer.exittheactack();
         Camerafolow.speed = 4;
         if (Manageritem.van)  // nếu có ván trượt thì thoát khỏi ván trượt và thoát khỏi cả giày
         {
@@ -1074,7 +1074,7 @@ public void Getscore(float value)
         {
             Camerafolow.camfolowplayer.StartCoroutine(Camerafolow.camfolowplayer.dowcamwenFly()); // cho camera đi xuống để k bị khuất player
         }
-        emty.emtyplayer.exittheactack();
+     //   emty.emtyplayer.exittheactack();
         rb.linearVelocity = Vector3.zero;
         Camerafolow.speed = 4;
         Perencamera.managerscen.ShowEffcts(true);
@@ -1275,7 +1275,7 @@ public void Getscore(float value)
                 checkpositionjump = transform.position.y;
                 Soundmanager.soundmanager.PlaySwipe();
                 jupamin();  
-                emty.emtyplayer.jump();
+              //  emty.emtyplayer.jump();
                 if (Manageritem.giay == false) // nhảy thường
                 {
                     rb.linearVelocity = new Vector3(0, 15, 0);
@@ -1822,7 +1822,7 @@ public void Getscore(float value)
         {
             savethetranformcheckformuvingvoin = transform.position.z; 
         }
-        emty.emtyplayer.Agan();
+        //emty.emtyplayer.Agan();
         playermodol.transform.eulerAngles = rotationanimation; 
         animationPlayer.applyRootMotion = false;
         posisonanimation.y = 0;
@@ -1992,14 +1992,14 @@ public void Getscore(float value)
         rb.linearVelocity = Vector3.zero;
         rb.useGravity = false;
         animationPlayer.enabled = false;
-        emty.emtyplayer.OnthePause();
+      //  emty.emtyplayer.OnthePause();
     }
     /// <summary>
     /// trở về chơi lại
     /// </summary>
     public void ExitPause()
     {
-        emty.emtyplayer.OntheResume();
+       // emty.emtyplayer.OntheResume();
         rb.linearVelocity = Vector3.zero;
         
         animationPlayer.enabled = true;

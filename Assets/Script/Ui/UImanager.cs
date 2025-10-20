@@ -849,9 +849,14 @@ public class UImanager : MonoBehaviour {
         opennewHideSocore.gameObject.SetActive(false);
         newcoinmaxmung.gameObject.SetActive(false);
         panellost.gameObject.SetActive(true);
-       // showPlayeronlost.SetActive(true);
+        // showPlayeronlost.SetActive(true);
         yield return new WaitForSeconds(1);
-        yourcoinmuving.text = managerdata.manager.getmuving().ToString(); // đường đi max
+       
+        if (yourcoinmuving != null)
+        {
+            yourcoinmuving.text = managerdata.manager.getmuving().ToString(); // đường đi max
+        }
+
         StartCoroutine(delayforcoinmuving(coinmuving, coin));
         yourcoinmuving.text = managerdata.manager.getmuving().ToString();
         yourcoin.text = managerdata.manager.Getcoin().ToString();
@@ -1210,21 +1215,21 @@ public class UImanager : MonoBehaviour {
         counHoverboard.text = "You have "+ managerdata.manager.getvan().ToString();
         showyouhaveHeadstar.text = "You have" + managerdata.manager.GetFly();
     }
-    public Text showtextog_facebook;
+   // public Text showtextog_facebook;
     /// <summary>
     /// mở menu shop khi đang ở menu chính
     /// </summary>
     public void onpenshopEarm()
     {
-        if (PlayerPrefs.GetInt("alowgetcoin") != 1)
-        {
-            showtextog_facebook.text = "Login to get coins";
-        }
+        // if (PlayerPrefs.GetInt("alowgetcoin") != 1)
+        // {
+        //     showtextog_facebook.text = "Login to get coins";
+        // }
           
-        else
-        {
-            showtextog_facebook.text = "You got";
-        }
+        // else
+        // {
+        //     showtextog_facebook.text = "You got";
+        // }
         loaditem();
         shoppanel.SetActive(true);
         panel_Earm_Coin.SetActive(true);
@@ -1619,6 +1624,9 @@ public class UImanager : MonoBehaviour {
     float cahe = 0;
     public Text showwhisthighscore;
     // Update is called once per frame
+
+    public inthepanelpause panel;
+
     void Update () {
         cahe += Time.deltaTime;
         if (cahe >60)
@@ -1632,7 +1640,7 @@ public class UImanager : MonoBehaviour {
             {
                 panellost.gameObject.SetActive(false);
                 Geetcoin();
-                if (managerdata.manager.getmuving() - coinmuving >0)
+                if (managerdata.manager.getmuving() - coinmuving > 0)
                 {
                     gettex.text = (managerdata.manager.getmuving() - coinmuving).ToString();
                 }
@@ -1650,7 +1658,15 @@ public class UImanager : MonoBehaviour {
                     }
                 }
             }
- 
+
+            if (panel == null)
+            {
+                panel = transform.GetComponent<inthepanelpause>();
+            }
+            if(panel.btnMe.activeInHierarchy)
+            {
+                Debug.LogError("Panel is Acitve");
+            }
         }
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float msec = deltaTime * 1000.0f;

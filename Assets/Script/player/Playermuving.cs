@@ -1924,7 +1924,7 @@ public void Getscore(float value)
     {
         animationPlayer.enabled = true;
         playagainanimation();
-        IkEmty.IKMAGNET.sEttaget();
+       // IkEmty.IKMAGNET.sEttaget();
         Start();
         Playermuving.player.loaddatavan();
         Playermuving.player.setTranformitem();

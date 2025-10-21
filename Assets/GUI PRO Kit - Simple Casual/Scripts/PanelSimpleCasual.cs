@@ -14,7 +14,7 @@ namespace LayerLab
             {
                 if (otherPanels[i] != null)
                 {
-                    otherPanels[i].SetActive(true);
+                    otherPanels[i].SetActive(false);
                 }
             }
         }
@@ -25,7 +25,7 @@ namespace LayerLab
             {
                 if (otherPanels[i] != null)
                 {
-                    otherPanels[i].SetActive(false);
+                 //   otherPanels[i].SetActive(false);
                 }
             }
         }

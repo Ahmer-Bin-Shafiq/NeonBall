@@ -174,7 +174,7 @@ public class UImanager : MonoBehaviour {
             Time.timeScale = 0.8F;
             Playermuving.speedmuving = 15;
             inthepanelpause.playagain = true;
-            GoogleMobileAdsScript.Instance.showbaner();
+           // GoogleMobileAdsScript.Instance.showbaner();
             Playagainshowhide.gameObject.SetActive(false);
             calll = false;
             coin = 0;
@@ -858,7 +858,10 @@ public class UImanager : MonoBehaviour {
         }
 
         StartCoroutine(delayforcoinmuving(coinmuving, coin));
-        yourcoinmuving.text = managerdata.manager.getmuving().ToString();
+        if (yourcoinmuving != null)
+        {
+            yourcoinmuving.text = managerdata.manager.getmuving().ToString();
+        }
         yourcoin.text = managerdata.manager.Getcoin().ToString();
         coinmuving = 0;
         coin = 0;
@@ -1028,7 +1031,7 @@ public class UImanager : MonoBehaviour {
     /// </summary>
     public void gotohome()
     {
-        GoogleMobileAdsScript.Instance.hidebaner();
+       // GoogleMobileAdsScript.Instance.hidebaner();
         Time.timeScale = 1;
         IkEmty.iklegth1 = 0;
         IkEmty.iklegth = 0;
